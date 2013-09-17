@@ -11,6 +11,7 @@ unsigned long applicationSeedVariable = 1L;
 long generateBaseRandomNumber();
 long rangedRand(long start, long end);
 void seedRand(unsigned long seed);
+void testMain();
 
 int main()
 {
@@ -34,7 +35,7 @@ long generateBaseRandomNumber()
  */
 long rangedRand(long start, long end)
 {
-	return generateBaseRandomNumber() % start + end;
+	return generateBaseRandomNumber() % (end - start + 1);
 }
 
 /**
@@ -52,6 +53,6 @@ void testMain()
 	int i = 0;
 	for(i=0;i < 10; i++)
 	{
-		printf("%ld", rangedRand(0, 10));
+		printf("%ld\n", rangedRand(0, 10));
 	}
 }
