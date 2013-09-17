@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<time.h>
 
 //Constants
 #define MULT_RNG_CONST 	214013L
@@ -7,8 +8,9 @@
 
 unsigned long applicationSeedVariable = 1L;
 
-long generateBaseRandomNumber(long seed);
+long generateBaseRandomNumber();
 long rangedRand(long start, long end);
+void seedRand(unsigned long seed);
 
 int main()
 {
@@ -32,7 +34,7 @@ long generateBaseRandomNumber()
  */
 long rangedRand(long start, long end)
 {
-	return newRand() % start + end;
+	return generateBaseRandomNumber() % start + end;
 }
 
 /**
@@ -47,4 +49,9 @@ void seedRand(unsigned long seed)
 void testMain()
 {
 	seedRand(time(NULL));
+	int i = 0;
+	for(i=0;i < 10; i++)
+	{
+		printf("%ld", rangedRand(0, 10));
+	}
 }
