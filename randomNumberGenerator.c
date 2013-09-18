@@ -1,18 +1,12 @@
 #include<stdio.h>
 #include<time.h>
-
-//Constants
-#define MULT_RNG_CONST 	214013L
-#define ADD_RNG_CONST 	2531011L
-#define MOD_RNG_CONST	32768L
+#include "randomNumberGenerator.h"
 
 unsigned long applicationSeedVariable = 1L;
 
-long generateBaseRandomNumber();
-long rangedRand(long start, long end);
-void seedRand(unsigned long seed);
-void testMain();
-
+/**
+ * It all begins here.
+ */
 int main()
 {
 	testMain();
